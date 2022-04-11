@@ -27,6 +27,7 @@ contract HTLC {
   }
 
   function withdraw(string memory _secret) external { 
+    require(msg.sender == recipient, "not receiver");
     require(widthdrawn == false, "already withdrawn");
     require(keccak256(abi.encodePacked(_secret)) == hash, 'wrong secret');
     secret = _secret; 
@@ -35,6 +36,7 @@ contract HTLC {
   } 
 
   function refund() external { 
+    require(msg.sender == owner, "not owner");
     require(refunded == false, "already refunded");
     require(block.timestamp > startTime + lockTime, 'too early');
     token.transfer(owner, amount); 
