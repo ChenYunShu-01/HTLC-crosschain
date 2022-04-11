@@ -37,6 +37,7 @@ contract HTLC {
 
   function refund() external { 
     require(msg.sender == owner, "not owner");
+    require(widthdrawn == false, "already withdrawn");
     require(refunded == false, "already refunded");
     require(block.timestamp > startTime + lockTime, 'too early');
     token.transfer(owner, amount); 
