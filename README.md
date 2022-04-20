@@ -1,5 +1,5 @@
 # HTLC-crosschain
-Hash TimeLock Contract(HTLC) is a Layer2 cross-chain solution applied widely. The atomic swap happens between 2 EVM compatible blockchains without any custodian and oracle. 
+Hash TimeLock Contract(HTLC) is a cross-chain solution applied widely. The atomic swap happens between 2 EVM compatible blockchains without any custodian and oracle. 
 
 The HTLC.sol has been deployed respectively on BSC testnet by Bob and Ropsten testnet by Alice. Each contract locks amount of tokens. Bob can withdraw token locked by Alice on BSC testnet with a secret, and Alice can withdraw token locked by Bob on Ropsten testnet with the same secret.
 
